@@ -1,9 +1,10 @@
 /*言語のカテゴリー*/
 import "./index.css";
 import React from "react";
+import type { Post } from "./typees/Post"
 
 interface CategoriesProps {
-  categories: string[];
+  categories: Post["categories"];
 }
 
 export const Categories:React.FC<CategoriesProps> = ({ categories }) => (

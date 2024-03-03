@@ -2,7 +2,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 
 export const useContactForm = () => {
   
-  interface inputs  {
+  interface Inputs  {
     name: string,
     email: string,
     message: string,
@@ -13,7 +13,7 @@ export const useContactForm = () => {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<inputs>({});
+  } = useForm<Inputs>({});
 
   const resetForm = () => {
     reset();
@@ -23,7 +23,7 @@ export const useContactForm = () => {
     throw new Error("error");
   };
 
-  const onSubmit: SubmitHandler<inputs> = async data => {
+  const onSubmit: SubmitHandler<Inputs> = async data => {
     const url =
       "https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/contacts";
     const prams = {

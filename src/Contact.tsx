@@ -1,6 +1,6 @@
 import { useContactForm } from "./useContactForm";
 
-export const Contact = () => {
+export const Contact: React.FC = () => {
   const {
     handleSubmit,
     onSubmit,

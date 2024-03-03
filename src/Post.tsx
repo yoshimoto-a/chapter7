@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Categories } from "./Categories";
-import { PostType } from "./BlogItem";
+import type { Post as PostType } from "./typees/Post";
 import dayjs from "dayjs";
 
 export const Post = () => {

@@ -4,17 +4,10 @@ import { useState, useEffect } from "react";
 import { Categories } from "./Categories";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
+import type { Post } from "./typees/Post";
 
-export interface PostType {
-  id: number;
-  title: string;
-  thumbnailUrl: string;
-  createdAt: string;
-  categories: string[];
-  content: string;
-}
-export const BlogItem = () => {
-  const [posts, setPosts] = useState([]);
+export const BlogItem: React.FC = () => {
+  const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -37,7 +30,7 @@ export const BlogItem = () => {
     <>
       <div className="mx-auto max-w-screen-lg px-4 my-10">
         <ul>
-          {posts.map((item: PostType) => (
+          {posts.map((item) => (
             <li className="flex flex-col list-none m-0 p-0" key={item.id}>
               <Link to={`/post/${item.id}`} className="text-gray-700 no-underline">
                 <div className="border border-gray-300 flex flex-row mb-8 p-4">
